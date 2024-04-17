@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-event-pratice
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
+      date: yyyy-MM-dd
+      time: HH:mm:[ss]
+server:
+  port: 18080
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: assign_id
+      logic-delete-field: delete_flag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
