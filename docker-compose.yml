@@ -10,3 +10,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "18080:18080"
+networks:
+  starbug_network:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
