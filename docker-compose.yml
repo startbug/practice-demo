@@ -6,7 +6,7 @@ services:
       starbug_network:
         ipv4_address: 172.30.0.151
     build:
-      context: .
+      context: ./spring-event-pratice
       dockerfile: Dockerfile
     ports:
       - "18080:18080"
