@@ -1,8 +1,6 @@
 services:
   myproject:
-    build:
-      context: ./spring-event-pratice/
-      dockerfile: Dockerfile
+    build: ./spring-event-pratice/
     image: spring-event-pratice:1.0
     networks:
       starbug_network:
