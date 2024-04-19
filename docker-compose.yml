@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "18080:18080"
+    image: spring-event-pratice:1.0
 networks:
   starbug_network:
     name: starbug_network
