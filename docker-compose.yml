@@ -1,14 +1,14 @@
 services:
   myproject:
-    networks:
-      starbug_network:
-        ipv4_address: 172.30.0.151
     build:
       context: ./spring-event-pratice/
       dockerfile: Dockerfile
+    image: spring-event-pratice:1.0
+    networks:
+      starbug_network:
+        ipv4_address: 172.30.0.151
     ports:
       - "18080:18080"
-    image: spring-event-pratice:1.0
 networks:
   starbug_network:
     name: starbug_network
