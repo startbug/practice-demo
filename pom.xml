@@ -19,6 +19,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
+        <docker.plugin.version>1.4.13</docker.plugin.version>
+        <docker.namespace>practice</docker.namespace>
     </properties>
 
     <dependencyManagement>
@@ -79,6 +81,32 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${docker.plugin.version}</version>
+                <configuration>
+                    <!-- <username>${docker.username}</username> -->
+                    <!-- <password>${docker.password}</password> -->
+                    <repository>${docker.namespace}/${project.artifactId}</repository>
+                    <tag>${project.version}</tag>
+                    <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                    <dockerfile>Dockerfile</dockerfile>
+                </configuration>
+                <!--添加如下配置，运行 mvn package 命令便会自动打包镜像-->
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <!-- <goal>push</goal> -->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
