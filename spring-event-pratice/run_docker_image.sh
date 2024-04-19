@@ -1,0 +1,1 @@
+docker run spring-event-pratice:1.0 --name spring-event-pratice
