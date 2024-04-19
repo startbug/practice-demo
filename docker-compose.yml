@@ -1,6 +1,5 @@
 services:
   myproject:
-    image: spring-event-pratice
     networks:
       starbug_network:
         ipv4_address: 172.30.0.151
