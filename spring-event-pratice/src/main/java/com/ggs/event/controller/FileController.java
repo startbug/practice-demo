@@ -36,9 +36,9 @@ public class FileController {
     @GetMapping("/add")
     public R<Boolean> addFile() {
         File file = new File();
-        file.setType(".pdf");
+        file.setType(".jpg");
         file.setSize(10000L);
-        file.setName("测试");
+        file.setName("测试1111zjzz");
         file.setUserId(1L);
         fileService.save(file);
         return R.ok();
