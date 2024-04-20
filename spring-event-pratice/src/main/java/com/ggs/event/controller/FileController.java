@@ -36,7 +36,7 @@ public class FileController {
     @GetMapping("/add")
     public R<Boolean> addFile() {
         File file = new File();
-        file.setType(".png");
+        file.setType(".exe");
         file.setSize(3333L);
         file.setName("测试1111zjzz");
         file.setUserId(1L);
