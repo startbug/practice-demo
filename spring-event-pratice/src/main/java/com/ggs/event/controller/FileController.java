@@ -37,7 +37,7 @@ public class FileController {
     public R<Boolean> addFile() {
         File file = new File();
         file.setType(".jpg");
-        file.setSize(10000L);
+        file.setSize(3333L);
         file.setName("测试1111zjzz");
         file.setUserId(1L);
         fileService.save(file);
