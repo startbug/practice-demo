@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan(basePackages = "com.ggs.event.mapper")
-public class SpringEventPraticeApplication {
+public class SpringEventPracticeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringEventPraticeApplication.class, args);
+		SpringApplication.run(SpringEventPracticeApplication.class, args);
 	}
 
 }
