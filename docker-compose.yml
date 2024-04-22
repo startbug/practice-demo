@@ -2,12 +2,13 @@ version: "3.8"
 services:
   myproject:
     build:
-      context: ./spring-event-pratice/
+      context: ./spring-event-practice/
       dockerfile: Dockerfile
-    image: spring-event-pratice:1.0
+    image: spring-event-practice:1.0
     networks:
       starbug_network:
         ipv4_address: 172.30.0.151
+    container_name: spring-event-practice
     ports:
       - "18080:18080"
 networks:

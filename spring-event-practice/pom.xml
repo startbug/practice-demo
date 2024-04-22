@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>com.ggs</groupId>
-    <artifactId>spring-event-pratice</artifactId>
+    <artifactId>spring-event-practice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>

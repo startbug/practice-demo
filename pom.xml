@@ -73,7 +73,7 @@
 
 
     <modules>
-        <module>spring-event-pratice</module>
+        <module>spring-event-practice</module>
     </modules>
 
     <build>
