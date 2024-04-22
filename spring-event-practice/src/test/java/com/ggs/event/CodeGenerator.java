@@ -21,9 +21,9 @@ public class CodeGenerator {
 
     @Test
     public void test() {
-        String url = "jdbc:mysql://8.134.177.106:3306/practice_demo?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true";
-        String username = "root";
-        String password = "starbug-docker-mysql";
+        String url = "";
+        String username = "";
+        String password = "";
         File file = new File("");
         String javaFilePath = "\\src\\main\\java";
         String resourcesFilePath = "\\src\\main\\resources";
