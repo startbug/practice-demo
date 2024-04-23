@@ -22,9 +22,6 @@ public class BaseEvent<T> implements ResolvableTypeProvider {
         this.addOrUpdate = addOrUpdate;
     }
 
-    public BaseEvent() {
-    }
-
     @Override
     public ResolvableType getResolvableType() {
         return ResolvableType.forClassWithGenerics(getClass(), ResolvableType.forInstance(data));
