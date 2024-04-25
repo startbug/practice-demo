@@ -36,10 +36,10 @@ public class FileController {
     @GetMapping("/add")
     public R<Boolean> addFile() {
         File file = new File();
-        file.setType(".rrr");
-        file.setSize(3333L);
-        file.setName("测试1111zjzz");
-        file.setUserId(1L);
+        file.setType(".zzz");
+        file.setSize(33444433L);
+        file.setName("测试11dsfsdaf231231sd11zjzz");
+        file.setUserId(222L);
         fileService.save(file);
         return R.ok();
     }
