@@ -8,6 +8,9 @@ services:
       starbug_network:
         ipv4_address: 172.30.0.151
     container_name: spring-event-practice
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /opt/docker/volumes/project/practice-demo/spring-event-practice/logs:/usr/app/logs
     ports:
       - "18080:18080"
 networks:

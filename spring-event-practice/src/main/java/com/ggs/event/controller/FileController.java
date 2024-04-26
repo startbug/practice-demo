@@ -37,9 +37,9 @@ public class FileController {
     public R<Boolean> addFile() {
         File file = new File();
         file.setType(".zzz");
-        file.setSize(33444433L);
+        file.setSize(1111113L);
         file.setName("测试11dsfsdaf231231sd11zjzz");
-        file.setUserId(222L);
+        file.setUserId(211112L);
         fileService.save(file);
         return R.ok();
     }
