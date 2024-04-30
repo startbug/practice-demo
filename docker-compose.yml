@@ -10,6 +10,7 @@ services:
     container_name: spring-event-practice
     environment:
       - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=prod
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /opt/docker/volumes/project/practice-demo/spring-event-practice/logs:/usr/app/logs
