@@ -75,6 +75,7 @@
     <modules>
         <module>spring-event-practice</module>
         <module>thread-practice/thread-practice</module>
+        <module>algorithm/rookie-practice</module>
     </modules>
 
     <build>

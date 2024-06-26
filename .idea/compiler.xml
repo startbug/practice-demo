@@ -8,8 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="thread-practice" />
-        <module name="spring-event-practice" />
         <module name="elasticsearch-practice" />
+        <module name="rookie-practice" />
+        <module name="spring-event-practice" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,7 +18,6 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="elasticsearch-practice" options="-parameters" />
       <module name="spring-event-practice" options="-parameters" />
-      <module name="thread-practice" options="" />
     </option>
   </component>
 </project>
