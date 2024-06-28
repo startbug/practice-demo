@@ -1,3 +1,5 @@
+package base1;
+
 /**
  * @Author starbug
  * @Description
@@ -8,8 +10,8 @@ public class TestDemo3 {
     static int count;
 
     // 反编译
-    // 1.javac TestDemo3.java
-    // 2.javap -v TestDemo3.class
+    // 1.javac base1.TestDemo3.java
+    // 2.javap -v base1.TestDemo3.class
     public static void increment() {
         synchronized (TestDemo3.class) {
             count++;
