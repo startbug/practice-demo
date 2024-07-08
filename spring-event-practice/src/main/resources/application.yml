@@ -6,6 +6,8 @@ spring:
       date-time: yyyy-MM-dd HH:mm:ss
       date: yyyy-MM-dd
       time: HH:mm:[ss]
+  profiles:
+    active: dev
 server:
   port: 18080
 mybatis-plus:

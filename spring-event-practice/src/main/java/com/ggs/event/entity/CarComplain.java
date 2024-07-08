@@ -1,10 +1,17 @@
 package com.ggs.event.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDate;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import java.time.LocalDateTime;
+
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
+
+import lombok.Data;
 
 /**
  * <p>
@@ -14,11 +21,12 @@ import io.swagger.annotations.ApiModelProperty;
  * @author lhh
  * @since 2024-07-08
  */
-@TableName("car_complain")
-@ApiModel(value = "CarComplain对象", description = "")
+@Data
+@TableName("s_car_complain")
 public class CarComplain implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    @TableId(type = IdType.ASSIGN_ID)
+    private Long id;
 
     private Long code;
 
@@ -30,54 +38,18 @@ public class CarComplain implements Serializable {
 
     private String problemClass;
 
-    public Long getCode() {
-        return code;
-    }
+    /**
+     * 删除标记, 1:已删除 0:未删除
+     */
+    private boolean deleteFlag;
 
-    public void setCode(Long code) {
-        this.code = code;
-    }
+    @Version
+    private int version;
 
-    public LocalDate getDate() {
-        return date;
-    }
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createdAt;
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updatedAt;
 
-    public String getPinpai() {
-        return pinpai;
-    }
-
-    public void setPinpai(String pinpai) {
-        this.pinpai = pinpai;
-    }
-
-    public String getChexi() {
-        return chexi;
-    }
-
-    public void setChexi(String chexi) {
-        this.chexi = chexi;
-    }
-
-    public String getProblemClass() {
-        return problemClass;
-    }
-
-    public void setProblemClass(String problemClass) {
-        this.problemClass = problemClass;
-    }
-
-    @Override
-    public String toString() {
-        return "CarComplain{" +
-            "code = " + code +
-            ", date = " + date +
-            ", pinpai = " + pinpai +
-            ", chexi = " + chexi +
-            ", problemClass = " + problemClass +
-        "}";
-    }
 }

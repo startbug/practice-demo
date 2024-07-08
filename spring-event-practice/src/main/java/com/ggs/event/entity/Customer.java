@@ -1,8 +1,17 @@
 package com.ggs.event.entity;
 
 import java.io.Serializable;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import java.time.LocalDateTime;
+
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
+
+import lombok.Data;
+
 
 /**
  * <p>
@@ -12,10 +21,12 @@ import io.swagger.annotations.ApiModelProperty;
  * @author lhh
  * @since 2024-07-08
  */
-@ApiModel(value = "Customer对象", description = "")
+@Data
+@TableName("s_customer")
 public class Customer implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    @TableId(type = IdType.ASSIGN_ID)
+    private Long id;
 
     private Integer cno;
 
@@ -29,63 +40,18 @@ public class Customer implements Serializable {
 
     private String city;
 
-    public Integer getCno() {
-        return cno;
-    }
+    /**
+     * 删除标记, 1:已删除 0:未删除
+     */
+    private boolean deleteFlag;
 
-    public void setCno(Integer cno) {
-        this.cno = cno;
-    }
+    @Version
+    private int version;
 
-    public String getLname() {
-        return lname;
-    }
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createdAt;
 
-    public void setLname(String lname) {
-        this.lname = lname;
-    }
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updatedAt;
 
-    public String getFname() {
-        return fname;
-    }
-
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
-    public Integer getSex() {
-        return sex;
-    }
-
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
-
-    public Integer getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-            "cno = " + cno +
-            ", lname = " + lname +
-            ", fname = " + fname +
-            ", sex = " + sex +
-            ", weight = " + weight +
-            ", city = " + city +
-        "}";
-    }
 }

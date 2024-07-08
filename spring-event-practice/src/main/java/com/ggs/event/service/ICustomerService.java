@@ -13,4 +13,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICustomerService extends IService<Customer> {
 
+    void threadTest();
+
+    void normalTest();
+
 }
